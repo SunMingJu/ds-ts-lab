@@ -1,10 +1,5 @@
-// (Optional) Change the names below to your friends.
+import {Friend, Colleague, ColleagueHistory } from './myTypes'
 
-interface Friend {
-    name: string;
-    phone: string;
-    age: number
-}
 
 const friend1 = {
   name: "Paul Fleming",
@@ -18,24 +13,9 @@ const friend2 = {
   age: 31,
 };
 
-const friends = [friend1, friend2];
-console.log(friends[1]);
+export const friends = [friend1, friend2];
+// console.log(friends[1]);
 
-//   -------------------
-
-interface Colleague {
-    name: string;
-    department: string;
-    contact: {
-        email: string;
-        extension: number;
-    }
-}
-
-interface ColleagueHistory {
-  current: Colleague[],
-  former: Colleague[]
-}
 
 const colleague1 = {
   name: "Ralph Graham",
@@ -69,4 +49,4 @@ export const colleagues : ColleagueHistory = {
   former: [],
 };
 
-console.log(colleagues.current[0]);
+// console.log(colleagues.current[0]);
