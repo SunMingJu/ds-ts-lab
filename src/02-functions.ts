@@ -1,5 +1,5 @@
 import { colleagues, friends } from './01-basics'
-import { Friend, Colleague, EmailContact } from './myTypes'
+import { Friend, Colleague, EmailContact, BuddyList, Buddy } from './myTypes'
 
 function older(f: Friend) : string {
      f.age += 1
@@ -75,3 +75,14 @@ function addInterest(friend : Friend , interestName : string) : string[] {
 }
 
 console.log(addInterest(friends[1], "Politics"));
+
+  function getBuddyListFriends(list: BuddyList): Friend[] {
+    return list.members.reduce((friends: Friend[], buddy: Buddy) => {
+      if ('phone' in buddy && 'dob' in buddy && 'interests' in buddy) {
+        friends.push(buddy as Friend);
+     }
+      return friends;
+    }, []);
+  }
+
+  console.log(getBuddyListFriends);
